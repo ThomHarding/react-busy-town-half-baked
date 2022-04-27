@@ -17,7 +17,7 @@ function App() {
   const ATTACK_VALUE = 1;
 
   function handleAlienIncrease() {
-    setAlienSize(alienSize - ATTACK_VALUE);
+    setAlienSize(alienSize + ATTACK_VALUE);
   }
 
   function handleAlienAttack() {
@@ -25,7 +25,7 @@ function App() {
   }
 
   function handleLizardIncrease() {
-    setLizardSize(lizardSize - ATTACK_VALUE);
+    setLizardSize(lizardSize + ATTACK_VALUE);
   }
 
   function handleLizardAttack() {
@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="App">
       <div className="fight">
-        <div style={{ width: `(${alienSize} * 10)px` }} className="monster">
+        <div style={{ width: `${alienSize * 10}px` }} className="monster">
           {/* the width of the alien should be ten times whatever the alien size is in state */}
           <img src="alien.png" width={20} />
           <div className='buttons'>
@@ -70,7 +70,7 @@ function App() {
             </button>
           </div>
         </div>
-        <div style={{ width: `(${lizardSize} * 10)px` }} className="monster">
+        <div style={{ width: `${lizardSize * 10}px` }} className="monster">
           {/* the width of the lizard should be ten times whatever the alien size is in state */}
           {/* i assume you mean whatever the lizard size is */}
           <img src="lizard.png" width={20} />
