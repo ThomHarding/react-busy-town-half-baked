@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 import VehicleList from './VehicleList';
 import TrafficLight from './TrafficLight';
@@ -31,10 +32,26 @@ function App() {
     setAlienSize(alienSize - ATTACK_VALUE);
   }
 
-  function handleAddTraffic(Traffic) {
-    traffic.push(Traffic);
+  function handleAddCar() {
+    traffic.push('car');
     setTraffic([...traffic]);
   }
+
+  function handleAddBus() {
+    traffic.push('bus');
+    setTraffic([...traffic]);
+  }
+
+  function handleAddTruck() {
+    traffic.push('truck');
+    setTraffic([...traffic]);
+  }
+  
+  function handleAddMotorcycle() {
+    traffic.push('motorcycle');
+    setTraffic([...traffic]);
+  }
+
 
   return (
     <div className="App">
@@ -83,17 +100,17 @@ function App() {
       This prop should be an array of strings like ['car', 'truck', 'truck', 'car', 'bus'].
       Do you have something like that in state that you could pass as a vehicles prop? 
       */}
-      <VehicleList />
+      <VehicleList vehicles={traffic}/>
       <div className='buttons'>
         {/* This part is weird */}
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'car' to the end */}
-        <button onClick={handleAddTraffic('car')}>Car</button>
+        <button onClick={handleAddCar}>Car</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'bus' to the end */}
-        <button onClick={handleAddTraffic('bus')}>Bus</button>
+        <button onClick={handleAddBus}>Bus</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'truck' to the end */}
-        <button onClick={handleAddTraffic('truck')}>Truck</button>
+        <button onClick={handleAddTruck}>Truck</button>
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'motorcycle' to the end */}
-        <button onClick={handleAddTraffic('motorcycle')}>Motorcycle</button>
+        <button onClick={handleAddMotorcycle}>Motorcycle</button>
       </div>
 
     </div>
